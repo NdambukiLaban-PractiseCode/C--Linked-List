@@ -67,8 +67,17 @@ int main (void)
     for(node *temp = list; temp != NULL; temp = temp -> next)
     {
         printf("%i\n", temp -> number);
+
     }
 
+
+    //To delete the nodes
+    while(list != NULL)    //Check that the list actually exists
+    {
+        node *temp = list -> next;   //Create a temporary node and point to the second node in the list
+        free(list);    //Free the first node
+        list = temp;  //Update list to point to the successive node
+    }
 
 }
 
